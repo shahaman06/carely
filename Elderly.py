@@ -1,6 +1,6 @@
-from VerificationProof import VerificationProof
 from BaseInfo import BaseInfo
 from ReviewInfo import ReviewInfo
+import mysql.connector
 
 # format the sequence of variables
 class Elderly:
@@ -19,19 +19,19 @@ class Elderly:
         #
 
 def Registration():
-    entry = Caretaker()
-    print("Enter Information of Elderly :- \n\n")
+    entry = Elderly()
+    print("Enter Information of Elderly :- \n")
     val = entry.bi.fill_info("el")
-    health_condition = input("Enter specific Health Condition: ")
+    entry.health_condition = input("Enter Specific Health Condition: ")
     #delayflag is problematic as it uses string for boolean value
-    delayflag = input("Is Elderly okay with 30 minute delay(True/False): ")
-    special_remarks = input("Enter Special Remarks of Caretaker: ")
-    val += (health_condition,strikes,no_of_caretaker,special_remarks,delayflag)
+    entry.delayflag = input("Is Elderly okay with 30 minute delay(True/False): ")
+    entry.special_remarks = input("Enter Special Remarks for Caretaker: ")
+    val += (entry.health_condition,entry.strikes,entry.no_of_caretaker,entry.special_remarks,entry.delayflag)
     conn = mysql.connector.connect(host="localhost",user="carely_admin",passwd="carely_admin",database="carelydb")
-    sql = "INSERT INTO CARETAKER VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%d,%s,%s)"
+    sqlcmd = "INSERT INTO Elderly VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     cur = conn.cursor()
-    cur.execute(sql,val)
+    cur.execute(sqlcmd,val)
     conn.commit()
-    sql = "INSERT INTO VERIFICATIONPROOF (carely_id) VALUES (%s)"
-    cur.execute(sql,(val[0],))
+    sqlcmd = "INSERT INTO VerificationProof (carely_id) VALUES (%s)"
+    cur.execute(sqlcmd,(val[0],))
     conn.commit()

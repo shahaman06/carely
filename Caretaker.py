@@ -13,15 +13,17 @@ class Caretaker:
 
 def Registration():
     entry = Caretaker()
-    print("Enter Information of Caretaker :- \n\n")
+    print("Enter Information of Caretaker :- \n")
     val = entry.bi.fill_info("ct")
-    specialty = input("Enter Specialty of Caretaker: ")
-    val += (strikes,specialty)
+    entry.specialty = input("Enter Specialty of Caretaker: ")
+    val += (entry.strikes,entry.specialty)
+    print(val)
     conn = mysql.connector.connect(host="localhost",user="carely_admin",passwd="carely_admin",database="carelydb")
-    sql = "INSERT INTO CARETAKER VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%d,%s)"
+    #Here Table names are case sensitive
+    sqlcmd = "INSERT INTO Caretaker VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     cur = conn.cursor()
-    cur.execute(sql,val)
+    cur.execute(sqlcmd,val)
     conn.commit()
-    sql = "INSERT INTO VERIFICATIONPROOF (carely_id) VALUES (%s)"
-    cur.execute(sql,(val[0],))
+    sqlcmd = "INSERT INTO VerificationProof (carely_id) VALUES (%s)"
+    cur.execute(sqlcmd,(val[0],))
     conn.commit()

@@ -4,7 +4,7 @@ create table Caretaker(
     id varchar(50) NOT NULL,
     fname varchar(30) NOT NULL,
     lname varchar(30) NOT NULL,
-    mname varchar(30) DEFAULT NULL,
+    mname varchar(30) DEFAULT "",
     mobno varchar(20) NOT NULL,
     dob varchar(16) NOT NULL,
     address varchar(100) NOT NULL,
@@ -12,6 +12,7 @@ create table Caretaker(
     picpath varchar(20) DEFAULT NULL,
     reviewed varchar(5) DEFAULT "False",
     flagged varchar(5) DEFAULT "False",
+    verified varchar(5) DEFAULT "False",
     strikes integer DEFAULT 0,
     speciality varchar(50),
     PRIMARY KEY(id)
@@ -27,13 +28,14 @@ create table Elderly(
     address varchar(100) NOT NULL,
     bg varchar(5) NOT NULL,
     picpath varchar(20) DEFAULT NULL,
-    reviewed varchar(5) DEFAULT False,
-    flagged varchar(5) DEFAULT False,
+    reviewed varchar(5) DEFAULT "False",
+    flagged varchar(5) DEFAULT "False",
+    verified varchar(5) DEFAULT "False",
     health_condition varchar(100) NOT NULL,
     strikes integer DEFAULT 0,
     no_of_caretaker integer DEFAULT 0,
     specail_remarks varchar(100) DEFAULT "",
-    delayflag varchar(5) DEFAULT True,
+    delayflag varchar(5) DEFAULT "True",
     PRIMARY KEY(id)
 );
 

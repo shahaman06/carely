@@ -1,3 +1,4 @@
+from VerificationProof import VerificationProof
 from BaseInfo import BaseInfo
 from ReviewInfo import ReviewInfo
 
@@ -8,11 +9,14 @@ class Elderly{
     
         bi = BaseInfo()
         review = ReviewInfo()
+        verified = VerificationProof()
         strikes = 0 # less than 5 strikes
-        health_cond = ""
+        health_condition = ""
         flagged = False
-        delayflag = ""
+        delayflag = "" #This indicates whether certain time delay is allowed
         no_of_caretaker = 0
         special_remarks = ""
     
+    def change_CT(self):
+        
 }

@@ -22,7 +22,7 @@ class BaseInfo{
         photo_path = ""
         address = ""
     
-    def fill_info(cat):
+    def fill_info(self,cat):
         fname = input("Enter First Name: ")
         while not fname.isalpha():
             fname = input("Re-Enter First Name: ")

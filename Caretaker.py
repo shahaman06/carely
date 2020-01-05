@@ -1,5 +1,6 @@
 from BaseInfo import BaseInfo
 from ReviewInfo import ReviewInfo
+from VerificationProof import VerificationProof
 
 class Caretaker{
     
@@ -7,8 +8,10 @@ class Caretaker{
     
         bi = BaseInfo()
         review = ReviewInfo()
+        verified = VerificationProof()
         flagged = False
         strikes = 0
-        speciality = ""
+        specialty = ""
+        
     
 }

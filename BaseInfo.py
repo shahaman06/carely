@@ -8,16 +8,19 @@ class BaseInfo{
     """
         [summary] Class defined to contain Basic Information about any person on portal
     """
-    id = ""
-    fname = ""
-    lname = ""
-    mname = ""
-    #map_loc = ""
-    dob = ""
-    mob_no = ""
-    bg = ""
-    photo_path = ""
-    address = ""
+    
+    def __init__(self, *args, **kwargs):
+    
+        id = ""
+        fname = ""
+        lname = ""
+        mname = ""
+        #map_loc = ""
+        dob = ""
+        mob_no = ""
+        bg = ""
+        photo_path = ""
+        address = ""
     
     def fill_info(cat):
         fname = input("Enter First Name: ")

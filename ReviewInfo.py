@@ -1,7 +1,8 @@
 class ReviewInfo{
     
-    review = ""
-    rating = 0
-    null_flag = False
+    def __init__(self, *args, **kwargs):
+        review = ""
+        rating = 0
+        null_flag = False
     
 }

@@ -4,7 +4,7 @@ from dateutil import parser
 from phonenumbers import parse as num_val
 # import create_id from util.py 
 
-class BaseInfo{
+class BaseInfo:
     """
         [summary] Class defined to contain Basic Information about any person on portal
     """
@@ -52,5 +52,3 @@ class BaseInfo{
         
         if id:
             # return personal information
-        
-}

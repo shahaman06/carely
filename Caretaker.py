@@ -2,7 +2,7 @@ from BaseInfo import BaseInfo
 from ReviewInfo import ReviewInfo
 import mysql.connector
 
-class Caretaker{
+class Caretaker:
 
     def __init__(self):
 
@@ -11,7 +11,6 @@ class Caretaker{
         strikes = 0
         specialty = ""
 
-}
 def Registration():
     entry = Caretaker()
     print("Enter Information of Caretaker :- \n\n")

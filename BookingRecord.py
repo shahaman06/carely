@@ -1,4 +1,4 @@
-class BookingRecord{
+class BookingRecord:
         
     def __init__(self):
         
@@ -12,4 +12,3 @@ class BookingRecord{
     
     def print_rec():
         #to print records
-}

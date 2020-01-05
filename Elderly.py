@@ -3,7 +3,7 @@ from BaseInfo import BaseInfo
 from ReviewInfo import ReviewInfo
 
 # format the sequence of variables
-class Elderly{
+class Elderly:
     
     def __init__(self):
     
@@ -17,7 +17,7 @@ class Elderly{
     
     def change_CT(self,status):
         #
-}
+
 def Registration():
     entry = Caretaker()
     print("Enter Information of Elderly :- \n\n")

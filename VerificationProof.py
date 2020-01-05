@@ -1,4 +1,4 @@
-class VerificationProof{
+class VerificationProof:
     
     def __init__(self):
     
@@ -23,5 +23,3 @@ class VerificationProof{
 
     def upload_details(cat,image):
         #upload details of id proof, change under_ver to true
-        
-}

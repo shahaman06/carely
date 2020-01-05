@@ -6,10 +6,10 @@ class Caretaker:
 
     def __init__(self):
 
-        bi = BaseInfo()
-        review = ReviewInfo()
-        strikes = 0
-        specialty = ""
+        self.bi = BaseInfo()
+        self.review = ReviewInfo()
+        self.strikes = 0
+        self.specialty = ""
 
 def Registration():
     entry = Caretaker()

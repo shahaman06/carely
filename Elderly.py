@@ -7,15 +7,15 @@ class Elderly:
     
     def __init__(self):
     
-        bi = BaseInfo()
-        review = ReviewInfo() #
-        strikes = 0 # less than 5 strikes
-        health_condition = ""
-        delayflag = "True" #This indicates whether certain time delay is allowed
-        no_of_caretaker = 0
-        special_remarks = ""
+        self.bi = BaseInfo()
+        self.review = ReviewInfo() #
+        self.strikes = 0 # less than 5 strikes
+        self.health_condition = ""
+        self.delayflag = "True" #This indicates whether certain time delay is allowed
+        self.no_of_caretaker = 0
+        self.special_remarks = ""
     
-    def change_CT(self,status):
+    #def change_CT(self,status):
         #
 
 def Registration():

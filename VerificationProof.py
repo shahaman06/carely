@@ -2,11 +2,11 @@ class VerificationProof:
     
     def __init__(self):
     
-        ver_flag = False
-        id_type = ""
-        id_no = ""
-        id_path = ""
-        carely_id = ""
+        self.ver_flag = False
+        self.id_type = ""
+        self.id_no = ""
+        self.id_path = ""
+        self.carely_id = ""
         #under_ver = False ----> Print using function when finding data
     
     def is_verified(cat):
@@ -18,8 +18,8 @@ class VerificationProof:
         else:
             print(cat," is Verified")
 
-    def get_verified(cat, info):
+    #def get_verified(cat, info):
         #show id proof and details of person and check if verified or not
 
-    def upload_details(cat,image):
+    #def upload_details(cat,image):
         #upload details of id proof, change under_ver to true

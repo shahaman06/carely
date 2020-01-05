@@ -1,6 +1,6 @@
 class BookingRecord{
         
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         
         can_id = ""
         eld_id = ""

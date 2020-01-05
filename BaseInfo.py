@@ -9,7 +9,7 @@ class BaseInfo{
         [summary] Class defined to contain Basic Information about any person on portal
     """
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
     
         id = ""
         fname = ""
@@ -17,10 +17,12 @@ class BaseInfo{
         mname = ""
         #map_loc = ""
         dob = ""
-        mob_no = ""
+        mobno = ""
         bg = ""
-        photo_path = ""
+        picpath = ""
         address = ""
+        flagged = False
+        verified = False # create a function which inserts record, and manipulates tables
     
     def fill_info(self,cat):
         fname = input("Enter First Name: ")
@@ -37,12 +39,13 @@ class BaseInfo{
         mob_no = num_val(input("Enter Mobile Number:  "))
         while not mob_no:
             mob_no = num_val(input("Re-Enter Mobile Number:  "))
-        address = input("Enter Address: \n")
+        address = input("Enter Address(max 100 character): \n")
         bg = input("Enter Blood Group: ")  #NOT VALIDATED
         photo_path = input("Input Photo Path(present in /caretaker directory ith extension): ")
         id = create_id(cat)
         #This is a temporary solution to photo gain, also NOT VALIDATED
         
+        #This might turn irrelevant
     def retrieve_info():
         
         if id:

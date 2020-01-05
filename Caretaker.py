@@ -4,14 +4,11 @@ from VerificationProof import VerificationProof
 
 class Caretaker{
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
     
         bi = BaseInfo()
         review = ReviewInfo()
-        verified = VerificationProof()
-        flagged = False
         strikes = 0
         specialty = ""
         
-    
 }

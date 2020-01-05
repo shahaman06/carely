@@ -1,19 +1,20 @@
 class VerificationProof{
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
     
         ver_flag = False
         id_type = ""
         id_no = ""
         id_path = ""
-        under_ver = False
+        carely_id = ""
+        #under_ver = False ----> Print using function when finding data
     
     def is_verified(cat):
 
         if not ver_flag:
             print(cat," is not verified")
-        else if not under_ver:
-            print(cat," is under verification process")
+        #else if not under_ver:
+        #    print(cat," is under verification process")
         else:
             print(cat," is Verified")
 

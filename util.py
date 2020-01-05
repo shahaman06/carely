@@ -1,5 +1,5 @@
 from datetime import datetime
-import mysql.connection
+import mysql.connector
 # agecalc for calculating age
 # phonenumbers validate moblie number
 

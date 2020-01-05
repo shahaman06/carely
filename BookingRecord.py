@@ -1,4 +1,4 @@
-class Record{
+class BookingRecord{
     can_id = ""
     eld_id = ""
     reg_datetime = ""

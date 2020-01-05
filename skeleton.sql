@@ -1,3 +1,4 @@
+create database carelydb;
 use carelydb;
 create table Caretaker(
     id varchar(50) NOT NULL,

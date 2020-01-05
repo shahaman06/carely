@@ -21,10 +21,11 @@ class BaseInfo{
         bg = ""
         picpath = ""
         address = ""
-        flagged = False
-        verified = False # create a function which inserts record, and manipulates tables
+        flagged = "False"
+        verified = "False" # create a function which inserts record, and manipulates tables
     
     def fill_info(self,cat):
+        
         fname = input("Enter First Name: ")
         while not fname.isalpha():
             fname = input("Re-Enter First Name: ")
@@ -44,6 +45,7 @@ class BaseInfo{
         photo_path = input("Input Photo Path(present in /caretaker directory ith extension): ")
         id = create_id(cat)
         #This is a temporary solution to photo gain, also NOT VALIDATED
+        return (id,fname,lname,mname,mob_no,dob,address,bg,photo_path,"False",flagged)
         
         #This might turn irrelevant
     def retrieve_info():

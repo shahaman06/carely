@@ -10,8 +10,8 @@ create table Caretaker(
     address varchar(100) NOT NULL,
     bg varchar(5) NOT NULL,
     picpath varchar(20) DEFAULT NULL,
-    reviewed boolean DEFAULT False,
-    flagged boolean DEFAULT False,
+    reviewed varchar(5) DEFAULT "False",
+    flagged varchar(5) DEFAULT "False",
     strikes integer DEFAULT 0,
     speciality varchar(50),
     PRIMARY KEY(id)
@@ -27,13 +27,13 @@ create table Elderly(
     address varchar(100) NOT NULL,
     bg varchar(5) NOT NULL,
     picpath varchar(20) DEFAULT NULL,
-    reviewed boolean DEFAULT False,
-    flagged boolean DEFAULT False,
+    reviewed varchar(5) DEFAULT False,
+    flagged varchar(5) DEFAULT False,
     health_condition varchar(100) NOT NULL,
     strikes integer DEFAULT 0,
     no_of_caretaker integer DEFAULT 0,
     specail_remarks varchar(100) DEFAULT "",
-    delayflag boolean DEFAULT True,
+    delayflag varchar(5) DEFAULT True,
     PRIMARY KEY(id)
 );
 
@@ -52,7 +52,7 @@ create table PendingBooking(
 );
 
 create table VerificationProof(
-    ver_flag boolean DEFAULT False,
+    ver_flag varchar(5) DEFAULT "False",
     id_type varchar(20) DEFAULT "",
     id_no varchar(20) DEFAULT "",
     id_path varchar(20) DEFAULT "",

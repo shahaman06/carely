@@ -54,11 +54,13 @@ create table PendingBooking(
 );
 
 create table VerificationProof(
+    carely_id varchar(50) NOT NULL,
     ver_flag varchar(5) DEFAULT "False",
+    under_ver varchar(5) DEFAULT "False",
     id_type varchar(20) DEFAULT "",
     id_no varchar(20) DEFAULT "",
     id_path varchar(20) DEFAULT "",
-    carely_id varchar(50) NOT NULL
+    PRIMARY KEY(carely_id)
 );
 
 create table ReviewInfo(

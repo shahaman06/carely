@@ -13,7 +13,7 @@ if type(args.caretaker) == type(True):
     creg()
     print("\n*********************Registration is Done*********************\n")
 if type(args.elderly) == type(True):
-    print("\n***************New Carely Elderl Registration***************\n")
+    print("\n***************New Carely Elderly Registration***************\n")
     ereg()
     print("\n*********************Registration is Done*********************\n")
 else:

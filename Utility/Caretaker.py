@@ -1,5 +1,4 @@
 from BaseInfo import BaseInfo
-from ReviewInfo import ReviewInfo
 import mysql.connector
 
 class Caretaker:
@@ -7,15 +6,14 @@ class Caretaker:
     def __init__(self):
 
         self.bi = BaseInfo()
-        self.review = ReviewInfo()
         self.strikes = 0
-        self.specialty = ""
+        self.speciality = ""
 
 def Registration():
     entry = Caretaker()
     print("Enter Information of Caretaker :- \n")
     val = entry.bi.fill_info("ct")
-    entry.specialty = input("Enter Specialty of Caretaker: ")
+    entry.specialty = input("Enter Speciality of Caretaker: ")
     val += (entry.strikes,entry.specialty)
     print(val)
     conn = mysql.connector.connect(host="localhost",user="carely_admin",passwd="carely_admin",database="carelydb")

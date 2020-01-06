@@ -1,5 +1,4 @@
 from BaseInfo import BaseInfo
-from ReviewInfo import ReviewInfo
 import mysql.connector
 
 # format the sequence of variables
@@ -8,7 +7,6 @@ class Elderly:
     def __init__(self):
     
         self.bi = BaseInfo()
-        self.review = ReviewInfo() #
         self.strikes = 0 # less than 5 strikes
         self.health_condition = ""
         self.delayflag = "True" #This indicates whether certain time delay is allowed

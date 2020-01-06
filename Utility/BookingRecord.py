@@ -7,8 +7,8 @@ class BookingRecord:
         self.reg_datetime = ""
         self.no_of_hours = ""
     
-    def retrieve_info():
+    #def retrieve_info():
         #to retrieve info of files
     
-    def print_rec():
+    #def print_rec():
         #to print records

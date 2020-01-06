@@ -21,7 +21,8 @@ class BaseInfo:
         self.picpath = ""
         self.address = ""
         self.flagged = "False"
-        self.verified = "False" # create a function which inserts record, and manipulates tables
+        self.verified = "False"
+        self.reviewed = "False" # create a function which inserts record, and manipulates tables
     
     def fill_info(self,cat):
         

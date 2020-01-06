@@ -1,6 +1,6 @@
 import argparse
-from Caretaker import Registration as creg
-from Elderly import Registration as ereg
+from Utility.Caretaker import Registration as creg
+from Utility.Elderly import Registration as ereg
 
 parser = argparse.ArgumentParser(description = "New Registration of user (Caretaker/Elderly)")
 parser.add_argument('-c','--caretaker',default=1,action ="store_true", help='Selection of Caretaker')

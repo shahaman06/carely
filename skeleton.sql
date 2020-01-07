@@ -52,7 +52,8 @@ create table PendingBooking(
     req_id varchar(50) NOT NULL,
     book_date varchar(16),
     book_time varchar(10),
-    no_of_hours integer DEFAULT 0
+    no_of_hours integer DEFAULT 0,
+    confirmation varchar(10) DEFAULT "Pending"
 );
 
 create table VerificationProof(

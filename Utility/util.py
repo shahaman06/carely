@@ -55,5 +55,11 @@ def invalid_user():
     exit()
 def validate_date(inp):
     return parser.parse(inp).strftime("%x")
+
+def invalid_arg():S
+    print("No Relevant Arguments are passed.")
+    print("Please Try Again Later.")
+    time.sleep(3)
+    exit()
 #create function to add implement customized query for different function using arguments
 #create function to print records

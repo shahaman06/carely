@@ -1,1 +1,0 @@
-#to load data from .csv to database using certain format

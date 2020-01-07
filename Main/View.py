@@ -2,21 +2,15 @@
 import argparse
 import time
 from Utility.util import print_records
-parser = argparse.ArgumentParser(description="Multi Function Python FIle to view ,update and verify")
+parser = argparse.ArgumentParser(description="Python FIle to view Records")
 parser.add_argument("-i","--id",action="store",help = "Input of User Id for further function use")
 # Here constant is stored in case no argument is passed
 parser.add_argument("-v","--view",const=True,nargs="?",help="to view records of Booking, Caretaker,Elderly,etc.")
-parser.add_argument("-u","--update",help="To Update Caretaker/Elderly Records. Works only if -i/--id is present")
-parser.add_argument("-p","--verify",help="To Verify Carely User.")
-
 args = parser.parse_args()
 
 if args.id == None:
     if args.view == None:
-        print("No Relevant Arguments are passed.")
-        print("Please Try Again Later.")
-        time.sleep(3)
-        exit()
+        invalid_arg()
     else:
         print_records("Caretaker")
         print_records("Elderly")

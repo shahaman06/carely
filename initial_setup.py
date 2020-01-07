@@ -8,3 +8,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#to load data from .csv to database using certain format
+#import pandas as pd

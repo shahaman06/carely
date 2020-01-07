@@ -1,6 +1,5 @@
 #Address to be to a new class
-from util import *
-from dateutil import parser
+from util import validate_date,validate_phone_number
 # import create_id from util.py 
 
 class BaseInfo:
@@ -35,7 +34,7 @@ class BaseInfo:
             self.lname = input("Re-Enter First Name: ")
         self.mname = input("Enter Middle Name: ")
         # input of map coordinate by selecting map location
-        self.dob = parser.parse(input("Enter Date of Birth: ")).strftime("%x")
+        self.dob = validate_date(input("Enter Date of Birth: "))
         self.mob_no = validate_phone_number()
         self.address = input("Enter Address(max 100 character): \n")
         self.bg = input("Enter Blood Group: ")  #NOT VALIDATED

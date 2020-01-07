@@ -3,18 +3,23 @@ import mysql.connector
 import os
 import time
 from Utility.VerificationProof import VerificationProof
+from Utility.util import invalid_user
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add("-i","--id",const="True",nargs="?",help="Carely Id Input")
+arg = parser.parse()
 print("\n**************Welcome to Carely User Verification**************\n")
-user_id = input("Enter Carely Id of Pre-Registered to be verified: ")
+if arg.id == None:
+    user_id = input("Enter Carely Id of Pre-Registered to be verified: ")
+else:
+    user_id = arg.id
 if user_id[:2] == "ct":
     db = "Caretaker"
 elif user_id[:2] == "el":
     db = "Elderly"
 else:
-    print("Wrong Id. Try Again")
-    time.sleep(3)
-    os.system("python Verification.py")
-    exit()
+    invalid_user()
 conn = mysql.connector.connect(host="localhost",user="carely_admin",passwd="carely_admin",database = "carelydb")
 cur = conn.cursor()
 sqlcmd = "select * from "+db+" where id = '"+user_id+"'"

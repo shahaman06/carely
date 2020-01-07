@@ -17,7 +17,7 @@ def load_data():
 def main():
     parser = ap(help="To ")
     #parser.add("-i","--install",action="store_true",help = "Installing Dependencies and Setting Up Database")
-    parser.add("-l","--load",action="store_true",help = "Load Data from csv file to database (File Should be present in Data/CSV Database Directory). Note: Only Sample Format to be used for structure and file name. For Sample Format of csv file Check Sample CSV Folder" )
+    parser.add("-l","--load",action="store_true",help = "Load Data from csv file to database (File Should be present in Data/CSV_Database Directory). Note: Only Sample Format to be used for structure and file name. For Sample Format of csv file Check Data/Sample_CSV Folder" )
     arg = parser.parse()
     install_db_dep()
     if arg.load:

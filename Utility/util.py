@@ -55,8 +55,7 @@ def invalid_user():
     exit()
 def validate_date(inp):
     return parser.parse(inp).strftime("%x")
-
-def invalid_arg():S
+def invalid_arg():
     print("No Relevant Arguments are passed.")
     print("Please Try Again Later.")
     time.sleep(3)

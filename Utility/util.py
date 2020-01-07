@@ -1,4 +1,5 @@
 from datetime import datetime
+from dateutil import parser
 from phonenumbers import parse as num_val
 import sql.connector
 import time
@@ -52,6 +53,7 @@ def invalid_user():
     print("Please Try Again Later.")
     time.sleep(3)
     exit()
-
+def validate_date(inp):
+    return parser.parse(inp).strftime("%x")
 #create function to add implement customized query for different function using arguments
 #create function to print records

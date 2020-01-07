@@ -1,6 +1,5 @@
 #Address to be to a new class
 from util import validate_date,validate_phone_number
-# import create_id from util.py 
 
 class BaseInfo:
     """

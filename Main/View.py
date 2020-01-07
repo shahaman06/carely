@@ -1,8 +1,10 @@
-#to view records of file
-import argparse
+from util import chgdir
+chgdir()
+
+from argparse import ArgumentParser as ap
 import time
-from Utility.util import print_records
-parser = argparse.ArgumentParser(description="Python FIle to view Records")
+from util import print_records
+parser = ap(description="Python FIle to view Records")
 parser.add_argument("-i","--id",action="store",help = "Input of User Id for further function use")
 # Here constant is stored in case no argument is passed
 parser.add_argument("-v","--view",const=True,nargs="?",help="to view records of Booking, Caretaker,Elderly,etc.")

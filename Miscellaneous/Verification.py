@@ -1,12 +1,14 @@
+from util import chgdir
+chgdir()
 #verification of user using proper identification --> This has to updated by checking real info and not laid back method
 import mysql.connector
-import os
+from os import system as cli
 import time
+from argparse import ArgumentParser as ap
 from Utility.VerificationProof import VerificationProof
-from Utility.util import invalid_user
-import argparse
+from util import invalid_user
 
-parser = argparse.ArgumentParser()
+parser = ap()
 parser.add("-i","--id",const="True",nargs="?",help="Carely Id Input")
 arg = parser.parse()
 print("\n**************Welcome to Carely User Verification**************\n")

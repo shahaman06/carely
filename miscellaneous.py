@@ -1,9 +1,9 @@
-from Utility.util import verify_user,invalid_user
-import argparse
+from util import verify_user,invalid_user
+from argparse import ArgumentParser as ap
 from os import system as cli
 
 miscellaneous = "Miscellaneous Python file to Update Carely user records and confirm Booking status and Verify Carely Users "
-parser = argparse.ArgumentParser(description=miscellaneous)
+parser = ap(description=miscellaneous)
 parser.add_argument("-u","--update",action="store_true",help="To Book Appointment")
 parser.add_argument("-v","--verification",action="store_true",help="To register new Carely User.")
 args = parser.parse()

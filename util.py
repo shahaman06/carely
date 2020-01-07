@@ -3,18 +3,14 @@ from dateutil import parser
 from phonenumbers import parse as num_val
 import sql.connector
 import time
+from os import system as cli
 # agecalc for calculating age
-# phonenumbers validate moblie number
+def chgdir():
+    os.chdir("/".join(os.getcwd().split()[:-1])
 
-def create_id(cat):     
-    """[summary] To create a id using certain format of date and time of registration
-    
-    Arguments:
-        cat {[string]} -- Used to define category of id
-    """
+def create_id(cat):
     now = datetime.now()
     id = cat + now.strftime("%m%H%y%M%d%S")
-
     return id
 
 def validate_phone_number():
@@ -42,23 +38,25 @@ def print_records(db,uid = False,id_name):
     print("\n***************"+db+" Data***************\n")
     for x in res:
         print(x)
+
 def verify_user(uid,db,id_name):
     conn = mysql.connector.connect(host="localhost",user="carely_admin",passwd="carely_admin",database="carelydb")
     cur = conn.cursor()
     cur.execute("Select * from "+db+" where "+id_name+" = '"+uid+"'")
     res = cur.fetch_all()
     return not res == []
+
 def invalid_user():
     print("\nInvalid Carely ID is passed.")
     print("Please Try Again Later.")
     time.sleep(3)
     exit()
+
 def validate_date(inp):
     return parser.parse(inp).strftime("%x")
+
 def invalid_arg():
     print("No Relevant Arguments are passed.")
     print("Please Try Again Later.")
     time.sleep(3)
     exit()
-#create function to add implement customized query for different function using arguments
-#create function to print records

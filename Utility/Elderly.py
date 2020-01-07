@@ -1,4 +1,4 @@
-from BaseInfo import BaseInfo
+from .BaseInfo import BaseInfo
 import mysql.connector
 
 # format the sequence of variables

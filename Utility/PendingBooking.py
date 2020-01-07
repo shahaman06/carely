@@ -6,9 +6,10 @@ class PendingBooking:
         self.reg_date = ""
         self.reg_time = ""
         self.no_of_hours = 0
+        self.confirmation = "Pending" #ACCEPTED REJECTED PENDING
     
     def fill_info():
         self.reg_date = input("Enter Date of Appointment: ")
         self.reg_time = input("Enter Time of Appointment: ")
         self.no_of_hours = input("For how many hours, can you attend: ")
-        return(self.reg_date,self.reg_time,self.no_of_hours)
+        return(self.reg_date,self.reg_time,self.no_of_hours,self.confirmation)

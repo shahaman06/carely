@@ -4,3 +4,4 @@ class ReviewInfo:
         self.review = ""
         self.rating = 0
         self.null_flag = False
+        self.name = ""

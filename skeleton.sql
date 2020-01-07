@@ -42,15 +42,17 @@ create table Elderly(
 create table BookingRecord(
     ct_id varchar(50) NOT NULL,
     el_id varchar(50) NOT NULL,
-    reg_datetime varchar(25),
-    no_of_hours integer DEFAULT 1
+    book_date varchar(16),
+    book_time varchar(10),
+    no_of_hours integer DEFAULT 0
 );
 
 create table PendingBooking(
     per_id varchar(50) NOT NULL,
     req_id varchar(50) NOT NULL,
-    reg_datetime varchar(25),
-    no_of_hours integer DEFAULT 1
+    book_date varchar(16),
+    book_time varchar(10),
+    no_of_hours integer DEFAULT 0
 );
 
 create table VerificationProof(

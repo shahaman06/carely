@@ -1,1 +1,26 @@
 #to confirm booking and set booking request
+import mysql.connector
+print("\n*****************Booking Page****************\n")
+per_id = input("Enter Personal Carely Id to set appointment: ").lower()
+if per_id[:2] not in ["el","ct"]:
+    invalid_user()
+else:
+    conn = mysql.connector.connect(host="localhost",user="carely_admin",passwd="carely_admin",database="carelydb")
+    cur = conn.cursor()
+    i = ["el","ct"].index(per[:2])
+    if i:
+        print_records("Elderly")self.reg_date = input("Enter Time of Appointment: ")
+        book_id = input("\nEnter Carely id of Oldie you want to take care of: ").lower()
+    else:
+        print_records("E")
+        book_id = input("\nEnter Carely id of Oldie you want to take care of: ").lower()
+    if not (verify_user(per_id,"per_id","id") | verify_user(book_id,"Elderly","id")):
+        invalid_user()
+    pb = PendingBooking()
+    val = (per_id,book_id) + pb.fill_info()
+    sqlcmd = "insert into PendingBooking values (%s,%s,%s,%s)"
+    cur.execute(sqlcmd,val)
+    conn.commit()
+print("\n\nThanks for Booking Appointment.")
+print("\nWait for futher response from the Other Side.")
+print("Thank You")

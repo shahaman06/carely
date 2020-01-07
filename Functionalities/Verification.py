@@ -5,7 +5,7 @@ import time
 from Utility.VerificationProof import VerificationProof
 
 print("\n**************Welcome to Carely User Verification**************\n")
-user_id = input("Enter Id of Pre-Registered to be verified: ")
+user_id = input("Enter Carely Id of Pre-Registered to be verified: ")
 if user_id[:2] == "ct":
     db = "Caretaker"
 elif user_id[:2] == "el":

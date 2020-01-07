@@ -1,4 +1,5 @@
 #to confirm booking and set booking request
+from Utility.util import invalid_user,print_records,verify_user
 import mysql.connector
 print("\n*****************Booking Page****************\n")
 per_id = input("Enter Personal Carely Id to set appointment: ").lower()

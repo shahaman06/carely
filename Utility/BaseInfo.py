@@ -38,5 +38,5 @@ class BaseInfo:
         self.address = input("Enter Address(max 100 character): \n")
         self.bg = input("Enter Blood Group: ")  #NOT VALIDATED
         #Picture not Validated,This is a temporary solution to photo gain, also NOT VALIDATED
-        self.photo_path = input("Input Photo Path(present in images/"+cat+"/ directory ith extension): ")
+        self.photo_path = input("Input Photo Path(present in Data/images/"+cat+"/ directory ith extension): ")
         return (self.id,self.fname,self.lname,self.mname,self.mob_no,self.dob,self.address,self.bg,self.photo_path,"False",self.flagged,self.verified)

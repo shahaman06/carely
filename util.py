@@ -6,7 +6,8 @@ import time
 from os import system as cli
 # agecalc for calculating age
 def chgdir():
-    os.chdir("/".join(os.getcwd().split()[:-1])
+    path_list = os.getcwd().split()
+    os.chdir("/".join(path_list[:path_list.index("Carely")+1])
 
 def create_id(cat):
     now = datetime.now()

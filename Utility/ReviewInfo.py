@@ -1,5 +1,4 @@
 class ReviewInfo:
-    
     def __init__(self):
         self.review = ""
         self.rating = 0

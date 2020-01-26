@@ -1,13 +1,14 @@
-from util import chgdir
-chgdir()
-
 from argparse import ArgumentParser as ap
 from Utility.Caretaker import Registration as creg
 from Utility.Elderly import Registration as ereg
 
-parser = ap(description = "New Registration of user (Caretaker/Elderly)")
-parser.add_argument('-c','--caretaker',default=1,action ="store_true", help='Selection of Caretaker')
-parser.add_argument('-e','--elderly',default=2,action ="store_true", help='Selection of Elderly')
+parser = ap(description="New Registration of user (Caretaker/Elderly)")
+parser.add_argument(
+    "-c", "--caretaker", default=1, action="store_true", help="Selection of Caretaker"
+)
+parser.add_argument(
+    "-e", "--elderly", default=2, action="store_true", help="Selection of Elderly"
+)
 
 args = parser.parse_args()
 

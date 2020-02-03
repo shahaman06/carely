@@ -1,7 +1,6 @@
-from Utility.util import verify_user, invalid_user
+from Utility.Utility import verify_user, invalid_user,chgdir
 from argparse import ArgumentParser as ap
 from os import system as cli
-from Utility.util import chgdir
 
 chgdir()
 miscellaneous = "Miscellaneous Python file to Update Carely user records and confirm Booking status and Verify Carely Users "

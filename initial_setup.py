@@ -1,7 +1,6 @@
 from os import system as cli
 from argparse import ArgumentParser as ap
 
-
 def install_db_dep():
     """
         Install Dependencies and Setup Database
@@ -12,12 +11,10 @@ def install_db_dep():
     cli('sudo mysql -u root -e "' + cmd + '"')
     cli("sudo mysql -u root -p < Data/Query/skeleton.sql")
 
-
 def load_data():
     # to load data from .csv to database using certain format
     # used command to export data out of mysql : sudo mysql -u root -e "use carelydb;select* from Caretaker;" | sed 's/\t/,/g' > Data/Sample_CSV/Caretaker.csv
     cli("sudo mysql -u root -p < Data/Query/load_cs_db.sql")
-
 
 def main():
 
@@ -41,7 +38,6 @@ def main():
         install_db_dep()
     if arg.load:
         load_data()
-
 
 if __name__ == "__main__":
     main()

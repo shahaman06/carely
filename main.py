@@ -1,6 +1,6 @@
 from argparse import ArgumentParser as ap
 from os import system as cli
-from Utility.util import chgdir
+from Utility.Utility import chgdir
 
 chgdir()
 desc = "Main Python file to use execute commands :- New Registation of Carely User\

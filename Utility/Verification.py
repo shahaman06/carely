@@ -2,8 +2,8 @@ import mysql.connector
 from os import system as cli
 import time
 from argparse import ArgumentParser as ap
-from Utility.VerificationProof import VerificationProof
-from Utility.util import invalid_user
+from BaseClass import VerificationProof
+from Utility import invalid_user
 import sys
 
 parser = ap()

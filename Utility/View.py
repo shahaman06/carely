@@ -1,6 +1,6 @@
 from argparse import ArgumentParser as ap
 import time
-from Utility.util import print_records
+from Utility import print_records
 import sys
 
 parser = ap(description="Python FIle to view Records")

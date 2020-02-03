@@ -1,6 +1,7 @@
 from datetime import datetime
 from dateutil import parser
 from phonenumbers import parse as num_val
+from BaseClass import Caretaker, Elderly
 import mysql.connector
 import time
 import os
@@ -9,8 +10,9 @@ import sys
 
 # agecalc for calculating age
 def chgdir():
-    """path_list = os.getcwd().split()
-    path = "/".join(path_list[:path_list.index("Carely")+1])"""
+    #Use it to change direcory to Carely/
+    path_list = os.getcwd().split()
+    path = "/".join(path_list[:path_list.index("Carely")+1])
     path = os.getcwd()
     os.chdir(path)
     sys.path.append(path)
@@ -118,3 +120,56 @@ def invalid_arg():
     print("No Relevant Arguments are passed.")
     print("Please Try Again Later.")
     time.sleep(3)
+
+
+def Register_Elderly():
+    entry = Elderly()
+    print("Enter Information of Elderly :- \n")
+    val = entry.bi.fill_info("el")
+    entry.health_condition = input("Enter Specific Health Condition: ")
+    # delayflag is problematic as it uses string for boolean value
+    entry.delayflag = input("Is Elderly okay with 30 minute delay(True/False): ")
+    entry.special_remarks = input("Enter Special Remarks for Caretaker: ")
+    val += (
+        entry.health_condition,
+        entry.strikes,
+        entry.no_of_caretaker,
+        entry.special_remarks,
+        entry.delayflag,
+    )
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="carely_admin",
+        passwd="carely_admin",
+        database="carelydb",
+    )
+    sqlcmd = "INSERT INTO Elderly VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    cur = conn.cursor()
+    cur.execute(sqlcmd, val)
+    conn.commit()
+    sqlcmd = "INSERT INTO VerificationProof (carely_id) VALUES (%s)"
+    cur.execute(sqlcmd, (val[0],))
+    conn.commit()
+
+
+def Register_Caretaker():
+    entry = Caretaker()
+    print("Enter Information of Caretaker :- \n")
+    val = entry.bi.fill_info("ct")
+    entry.specialty = input("Enter Speciality of Caretaker: ")
+    val += (entry.strikes, entry.specialty)
+    print(val)
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="carely_admin",
+        passwd="carely_admin",
+        database="carelydb",
+    )
+    # Here Table names are case sensitive
+    sqlcmd = "INSERT INTO Caretaker VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    cur = conn.cursor()
+    cur.execute(sqlcmd, val)
+    conn.commit()
+    sqlcmd = "INSERT INTO VerificationProof (carely_id) VALUES (%s)"
+    cur.execute(sqlcmd, (val[0],))
+    conn.commit()

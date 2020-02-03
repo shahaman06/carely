@@ -1,5 +1,5 @@
 # to confirm booking and set booking request
-from .Utility.util import invalid_user, print_records, verify_user
+from Utility import invalid_user, print_records, verify_user
 import mysql.connector
 
 print("\n*****************Booking Page****************\n")
